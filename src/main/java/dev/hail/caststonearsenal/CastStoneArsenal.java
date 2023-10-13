@@ -1,8 +1,9 @@
-package com.example.examplemod;
+package dev.hail.caststonearsenal;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -29,39 +30,37 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleMod.MODID)
-public class ExampleMod
+import static com.simibubi.create.AllBlocks.*;
+import static com.simibubi.create.AllItems.*;
+
+@Mod(CastStoneArsenal.MODID)
+public class CastStoneArsenal
 {
-    // Define mod id in a common place for everything to reference
-    public static final String MODID = "examplemod";
-    // Directly reference a slf4j logger
+    public static final String MODID = "cast_stone_arsenal";
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
-
-    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
-    public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-            .alwaysEat().nutrition(1).saturationMod(2f).build())));
-
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
+    public static final RegistryObject<Block> CAST_STONE_BRICK = BLOCKS.register("cast_stone_brick", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+    public static final RegistryObject<Item> CAST_STONE_BRICK_ITEM = ITEMS.register("cast_stone_brick", () -> new BlockItem(CAST_STONE_BRICK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CAST_STONE_INGOT = ITEMS.register("cast_stone_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("csa_tab", () -> CreativeModeTab.builder()
+            //.withTabsBefore(CreativeModeTabs.COMBAT)
+            .title(Component.translatable("cast_stone_arsenal.name"))
+            .icon(() -> CAST_STONE_INGOT.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(CAST_STONE_INGOT.get());
+                output.accept(CAST_STONE_BRICK_ITEM.get());
+                //Hidden Item
+                output.accept(CHROMATIC_COMPOUND.get());
+                output.accept(SHADOW_STEEL.get());
+                output.accept(REFINED_RADIANCE.get());
+                output.accept(SHADOW_STEEL_CASING.get());
+                output.accept(REFINED_RADIANCE_CASING.get());
             }).build());
 
-    public ExampleMod()
+    public CastStoneArsenal()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -79,7 +78,7 @@ public class ExampleMod
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        //modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -96,13 +95,6 @@ public class ExampleMod
         LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
-    }
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

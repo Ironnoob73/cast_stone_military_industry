@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0" : "cast_stone_arsenal:item/cast_stone_ingot"
+	}
+}
