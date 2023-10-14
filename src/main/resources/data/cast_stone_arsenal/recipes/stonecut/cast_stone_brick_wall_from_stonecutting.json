@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "cast_stone_arsenal:cast_stone_block"
+  },
+  "result": "cast_stone_arsenal:cast_stone_brick_wall",
+  "count": 1
+}

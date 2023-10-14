@@ -1,0 +1,18 @@
+package dev.hail.caststonearsenal.mixin;
+
+import com.simibubi.create.content.contraptions.BlockMovementChecks;
+import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.MapColor;
+import org.spongepowered.asm.mixin.Mixin;
+
+import static com.simibubi.create.content.decoration.palettes.PaletteBlockPattern.STANDARD_RANGE;
+import static com.simibubi.create.content.decoration.palettes.PaletteBlockPattern.VANILLA_RANGE;
+
+@Mixin(value = AllPaletteStoneTypes.class, remap = false)
+public enum PaletteStoneMixin {
+    ASURINE(STANDARD_RANGE, r -> r.paletteStoneBlock("asurine", () -> Blocks.DEEPSLATE, true, true)
+            .properties(p -> p.destroyTime(1.25f)
+                    .mapColor(MapColor.COLOR_BLUE))
+            .register());
+}

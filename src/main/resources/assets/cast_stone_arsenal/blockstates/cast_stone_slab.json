@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cast_stone_arsenal:block/cast_stone_slab_top"
+    },
+    "type=bottom": {
+      "model": "cast_stone_arsenal:block/cast_stone_slab"
+    },
+    "type=double": {
+      "model": "cast_stone_arsenal:block/cast_stone_block"
+    }
+  }
+}

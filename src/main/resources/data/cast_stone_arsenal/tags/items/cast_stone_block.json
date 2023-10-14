@@ -1,0 +1,14 @@
+{
+    "replace": false,
+    "values": [
+    "cast_stone_arsenal:cast_stone_bricks",
+    "cast_stone_arsenal:cast_stone_brick_stairs",
+    "cast_stone_arsenal:cast_stone_brick_wall",
+    "cast_stone_arsenal:cast_stone_block",
+    "cast_stone_arsenal:cast_stone_stairs",
+    "cast_stone_arsenal:cast_stone_wall",
+    "cast_stone_arsenal:cast_stone_tile",
+    "cast_stone_arsenal:cast_stone_tile_stairs",
+    "cast_stone_arsenal:cast_stone_tile_wall"
+    ]
+  }

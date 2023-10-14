@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "cast_stone_arsenal:cast_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "cast_stone_arsenal:cast_stone_brick_wall",
+    "count": 6
+  }
+}

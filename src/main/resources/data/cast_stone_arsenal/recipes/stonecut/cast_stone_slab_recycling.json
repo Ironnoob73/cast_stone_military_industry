@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cast_stone_arsenal:cast_stone_slab"
+    },
+    {
+      "item": "cast_stone_arsenal:cast_stone_slab"
+    }
+  ],
+  "result": {
+    "item": "cast_stone_arsenal:cast_stone_block"
+  }
+}

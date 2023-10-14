@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "cast_stone_arsenal:block/cast_stone_tile",
+    "bottom": "cast_stone_arsenal:block/cast_stone_tile",
+    "top": "cast_stone_arsenal:block/cast_stone_tile"
+  }
+}

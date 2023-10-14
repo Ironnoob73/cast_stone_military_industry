@@ -2,6 +2,18 @@
   "cast_stone_arsenal.name": "铸石军工",
 
   "item.cast_stone_arsenal.cast_stone_ingot": "铸石锭",
+  "item.cast_stone_arsenal.molten_basalt": "熔融玄武岩",
 
-  "block.cast_stone_arsenal.cast_stone_brick": "铸石砖"
+  "block.cast_stone_arsenal.cast_stone_bricks": "铸石砖",
+  "block.cast_stone_arsenal.cast_stone_brick_stairs": "铸石砖楼梯",
+  "block.cast_stone_arsenal.cast_stone_brick_slab": "铸石砖台阶",
+  "block.cast_stone_arsenal.cast_stone_brick_wall": "铸石砖墙",
+  "block.cast_stone_arsenal.cast_stone_block": "铸石块",
+  "block.cast_stone_arsenal.cast_stone_stairs": "铸石楼梯",
+  "block.cast_stone_arsenal.cast_stone_slab": "铸石台阶",
+  "block.cast_stone_arsenal.cast_stone_wall": "铸石墙",
+  "block.cast_stone_arsenal.cast_stone_tile": "铸石瓦",
+  "block.cast_stone_arsenal.cast_stone_tile_stairs": "铸石瓦楼梯",
+  "block.cast_stone_arsenal.cast_stone_tile_slab": "铸石瓦台阶",
+  "block.cast_stone_arsenal.cast_stone_tile_wall": "铸石瓦墙"
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "key": {
+    "C": {
+      "tag": "forge:ingots/cast_stone"
+    }
+  },
+  "result": {
+    "item": "cast_stone_arsenal:cast_stone_bricks"
+  }
+}

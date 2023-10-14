@@ -1,22 +1,19 @@
 package dev.hail.caststonearsenal;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import dev.hail.caststonearsenal.collection.CSABlocks;
+import dev.hail.caststonearsenal.collection.CSAItems;
+import dev.hail.caststonearsenal.infrastructure.data.CSADatagen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -32,26 +29,34 @@ import org.slf4j.Logger;
 
 import static com.simibubi.create.AllBlocks.*;
 import static com.simibubi.create.AllItems.*;
+import static dev.hail.caststonearsenal.collection.CSABlocks.*;
+import static dev.hail.caststonearsenal.collection.CSAItems.*;
 
 @Mod(CastStoneArsenal.MODID)
 public class CastStoneArsenal
 {
     public static final String MODID = "cast_stone_arsenal";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(CastStoneArsenal.MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-
-    public static final RegistryObject<Block> CAST_STONE_BRICK = BLOCKS.register("cast_stone_brick", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
-    public static final RegistryObject<Item> CAST_STONE_BRICK_ITEM = ITEMS.register("cast_stone_brick", () -> new BlockItem(CAST_STONE_BRICK.get(), new Item.Properties()));
-    public static final RegistryObject<Item> CAST_STONE_INGOT = ITEMS.register("cast_stone_ingot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("csa_tab", () -> CreativeModeTab.builder()
-            //.withTabsBefore(CreativeModeTabs.COMBAT)
+    public static final RegistryObject<CreativeModeTab> CSA_TAB = CREATIVE_MODE_TABS.register("csa_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("cast_stone_arsenal.name"))
             .icon(() -> CAST_STONE_INGOT.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(CAST_STONE_INGOT.get());
-                output.accept(CAST_STONE_BRICK_ITEM.get());
+                output.accept(CAST_STONE_BRICKS.get());
+                output.accept(CAST_STONE_BRICK_STAIRS.get());
+                output.accept(CAST_STONE_BRICK_SLAB.get());
+                output.accept(CAST_STONE_BRICK_WALL.get());
+                output.accept(CAST_STONE_BLOCK.get());
+                output.accept(CAST_STONE_STAIRS.get());
+                output.accept(CAST_STONE_SLAB.get());
+                output.accept(CAST_STONE_WALL.get());
+                output.accept(CAST_STONE_TILE.get());
+                output.accept(CAST_STONE_TILE_STAIRS.get());
+                output.accept(CAST_STONE_TILE_SLAB.get());
+                output.accept(CAST_STONE_TILE_WALL.get());
+                output.accept(MOLTEN_BASALT.get());
                 //Hidden Item
                 output.accept(CHROMATIC_COMPOUND.get());
                 output.accept(SHADOW_STEEL.get());
@@ -63,25 +68,20 @@ public class CastStoneArsenal
     public CastStoneArsenal()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
-
-        // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
-        CREATIVE_MODE_TABS.register(modEventBus);
-
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
-        //modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::commonSetup);
 
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        REGISTRATE.registerEventListeners(modEventBus);
+        CSAItems.register();
+        CSABlocks.register();
+        CREATIVE_MODE_TABS.register(modEventBus);
+
+        MinecraftForge.EVENT_BUS.register(this);
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        modEventBus.addListener(EventPriority.LOWEST, CSADatagen::gatherData);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

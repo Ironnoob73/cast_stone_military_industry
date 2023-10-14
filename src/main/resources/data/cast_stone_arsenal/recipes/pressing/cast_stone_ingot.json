@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "cast_stone_arsenal:molten_basalt"
+    }
+  ],
+  "results": [
+    {
+      "item": "cast_stone_arsenal:cast_stone_ingot"
+    }
+  ]
+}

@@ -2,6 +2,18 @@
   "cast_stone_arsenal.name": "Cast Stone Arsenal",
 
   "item.cast_stone_arsenal.cast_stone_ingot": "Cast Stone Ingot",
+  "item.cast_stone_arsenal.molten_basalt": "Molten Basalt",
 
-  "block.cast_stone_arsenal.cast_stone_brick": "Cast Stone Brick"
+  "block.cast_stone_arsenal.cast_stone_bricks": "Cast Stone Bricks",
+  "block.cast_stone_arsenal.cast_stone_brick_stairs": "Cast Stone Brick Stairs",
+  "block.cast_stone_arsenal.cast_stone_brick_slab": "Cast Stone Brick Slab",
+  "block.cast_stone_arsenal.cast_stone_brick_wall": "Cast Stone Brick Wall",
+  "block.cast_stone_arsenal.cast_stone_block": "Cast Stone Block",
+  "block.cast_stone_arsenal.cast_stone_stairs": "Cast Stone Stairs",
+  "block.cast_stone_arsenal.cast_stone_slab": "Cast Stone Slab",
+  "block.cast_stone_arsenal.cast_stone_wall": "Cast Stone Wall",
+  "block.cast_stone_arsenal.cast_stone_tile": "Cast Stone Tile",
+  "block.cast_stone_arsenal.cast_stone_tile_stairs": "Cast Stone Tile Stairs",
+  "block.cast_stone_arsenal.cast_stone_tile_slab": "Cast Stone Tile Slab",
+  "block.cast_stone_arsenal.cast_stone_tile_wall": "Cast Stone Tile Wall"
 }
