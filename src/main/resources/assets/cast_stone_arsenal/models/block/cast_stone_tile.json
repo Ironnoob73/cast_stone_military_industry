@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "cast_stone_arsenal:block/cast_stone_tile",
-    "particle": "cast_stone_arsenal:block/cast_stone_tile"
-  }
-}

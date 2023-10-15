@@ -7,7 +7,10 @@
     "cast_stone_arsenal:cast_stone_block",
     "cast_stone_arsenal:cast_stone_stairs",
     "cast_stone_arsenal:cast_stone_wall",
-    "cast_stone_arsenal:cast_stone_tile",
+    "cast_stone_arsenal:cast_stone_panel",
+    "cast_stone_arsenal:cast_stone_panel_stairs",
+    "cast_stone_arsenal:cast_stone_panel_wall",
+    "cast_stone_arsenal:cast_stone_tiles",
     "cast_stone_arsenal:cast_stone_tile_stairs",
     "cast_stone_arsenal:cast_stone_tile_wall"
     ]

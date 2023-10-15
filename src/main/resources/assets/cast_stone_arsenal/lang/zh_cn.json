@@ -12,7 +12,11 @@
   "block.cast_stone_arsenal.cast_stone_stairs": "铸石楼梯",
   "block.cast_stone_arsenal.cast_stone_slab": "铸石台阶",
   "block.cast_stone_arsenal.cast_stone_wall": "铸石墙",
-  "block.cast_stone_arsenal.cast_stone_tile": "铸石瓦",
+  "block.cast_stone_arsenal.cast_stone_panel": "铸石镶板",
+  "block.cast_stone_arsenal.cast_stone_panel_stairs": "铸石镶板楼梯",
+  "block.cast_stone_arsenal.cast_stone_panel_slab": "铸石镶板台阶",
+  "block.cast_stone_arsenal.cast_stone_panel_wall": "铸石镶板墙",
+  "block.cast_stone_arsenal.cast_stone_tiles": "铸石瓦",
   "block.cast_stone_arsenal.cast_stone_tile_stairs": "铸石瓦楼梯",
   "block.cast_stone_arsenal.cast_stone_tile_slab": "铸石瓦台阶",
   "block.cast_stone_arsenal.cast_stone_tile_wall": "铸石瓦墙"

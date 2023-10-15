@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "cast_stone_arsenal:block/cast_stone_panel_slab_side",
+    "bottom": "cast_stone_arsenal:block/cast_stone_panel",
+    "top": "cast_stone_arsenal:block/cast_stone_panel"
+  }
+}

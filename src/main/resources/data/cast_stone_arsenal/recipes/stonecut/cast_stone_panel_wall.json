@@ -6,11 +6,11 @@
   ],
   "key": {
     "X": {
-      "item": "cast_stone_arsenal:cast_stone_tiles"
+      "item": "cast_stone_arsenal:cast_stone_panel"
     }
   },
   "result": {
-    "item": "cast_stone_arsenal:cast_stone_tile_wall",
+    "item": "cast_stone_arsenal:cast_stone_panel_wall",
     "count": 6
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_post",
   "textures": {
-    "wall": "cast_stone_arsenal:block/cast_stone_tiles"
+    "wall": "cast_stone_arsenal:block/cast_stone_panel"
   }
 }

@@ -7,7 +7,7 @@
       "model": "cast_stone_arsenal:block/cast_stone_brick_slab"
     },
     "type=double": {
-      "model": "cast_stone_arsenal:block/cast_stone_brick"
+      "model": "cast_stone_arsenal:block/cast_stone_bricks"
     }
   }
 }

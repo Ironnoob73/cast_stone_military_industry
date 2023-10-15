@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "cast_stone_tile_stairs",
+  "group": "cast_stone_panel_stairs",
   "pattern": [
     "X  ",
     "XX ",
@@ -8,11 +8,11 @@
   ],
   "key": {
     "X": {
-      "item": "cast_stone_arsenal:cast_stone_tiles"
+      "item": "cast_stone_arsenal:cast_stone_panel"
     }
   },
   "result": {
-    "item": "cast_stone_arsenal:cast_stone_tile_stairs",
+    "item": "cast_stone_arsenal:cast_stone_panel_stairs",
     "count": 4
   }
 }

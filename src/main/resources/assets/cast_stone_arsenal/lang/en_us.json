@@ -12,7 +12,11 @@
   "block.cast_stone_arsenal.cast_stone_stairs": "Cast Stone Stairs",
   "block.cast_stone_arsenal.cast_stone_slab": "Cast Stone Slab",
   "block.cast_stone_arsenal.cast_stone_wall": "Cast Stone Wall",
-  "block.cast_stone_arsenal.cast_stone_tile": "Cast Stone Tile",
+  "block.cast_stone_arsenal.cast_stone_panel": "Cast Stone Panel",
+  "block.cast_stone_arsenal.cast_stone_panel_stairs": "Cast Stone Panel Stairs",
+  "block.cast_stone_arsenal.cast_stone_panel_slab": "Cast Stone Panel Slab",
+  "block.cast_stone_arsenal.cast_stone_panel_wall": "Cast Stone Panel Wall",
+  "block.cast_stone_arsenal.cast_stone_tiles": "Cast Stone Tile",
   "block.cast_stone_arsenal.cast_stone_tile_stairs": "Cast Stone Tile Stairs",
   "block.cast_stone_arsenal.cast_stone_tile_slab": "Cast Stone Tile Slab",
   "block.cast_stone_arsenal.cast_stone_tile_wall": "Cast Stone Tile Wall"

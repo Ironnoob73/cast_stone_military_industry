@@ -3,6 +3,6 @@
   "ingredient": {
     "tag": "cast_stone_arsenal:cast_stone_block"
   },
-  "result": "cast_stone_arsenal:cast_stone_tile",
+  "result": "cast_stone_arsenal:cast_stone_tiles",
   "count": 1
 }

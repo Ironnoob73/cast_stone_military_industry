@@ -52,12 +52,19 @@ public class CastStoneArsenal
                 output.accept(CAST_STONE_STAIRS.get());
                 output.accept(CAST_STONE_SLAB.get());
                 output.accept(CAST_STONE_WALL.get());
-                output.accept(CAST_STONE_TILE.get());
+                output.accept(CAST_STONE_PANEL.get());
+                output.accept(CAST_STONE_PANEL_STAIRS.get());
+                output.accept(CAST_STONE_PANEL_SLAB.get());
+                output.accept(CAST_STONE_PANEL_WALL.get());
+                output.accept(CAST_STONE_TILES.get());
                 output.accept(CAST_STONE_TILE_STAIRS.get());
                 output.accept(CAST_STONE_TILE_SLAB.get());
                 output.accept(CAST_STONE_TILE_WALL.get());
+                output.accept(LAYERED_CAST_STONE.get());
+                output.accept(CAST_STONE_PILLAR.get());
                 output.accept(MOLTEN_BASALT.get());
                 //Hidden Item
+                //output.accept(Blocks.AIR);
                 output.accept(CHROMATIC_COMPOUND.get());
                 output.accept(SHADOW_STEEL.get());
                 output.accept(REFINED_RADIANCE.get());
